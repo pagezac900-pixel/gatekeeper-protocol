@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "gatekeeper-sdk"
+version = "0.1.0"
+description = "Cryptographically-enforced human authorization for AI systems"
+readme = "../COMPLIANCE.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "cryptography>=42",
+]
+
+[project.optional-dependencies]
+blake3 = ["blake3>=0.3"]
+dev    = ["pytest>=8", "blake3>=0.3"]
+
+[project.urls]
+Homepage = "https://vertexpace.com"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gatekeeper*"]
